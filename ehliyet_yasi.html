@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Yaşı Giriniz : </p>
+    <input type="text" id="age">
+    <p><button type="button" onclick="yasHesabi()" >HESAPLA!</button></p>
+    <div id="result"></div>
+
+    <script>
+        function yasHesabi(){
+            var yas, sonuc1;
+            yas = Number(document.getElementById("age").value);
+            sonuc1 = document.getElementById("result");
+
+            if (yas >= 18) {
+                sonuc1.innerHTML = "Ehliyet alabilirsiniz.";
+            } else if ( yas >0 && yas < 18) {
+                sonuc1.innerHTML = "Ehliyet alamazsınız.";
+            }
+            else{
+                sonuc1.innerHTML = "Lütfen Yaşınızı Giriniz."
+            }
+
+        }
+    </script>
+</body>
+
+</html>
