@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="result"></p>
+    <p>Sayı giriniz : <input type="text" id="number"></p>
+    <button type="button" onclick="CountFunc()">Sonuç</button>
+
+
+    <script>
+        function CountFunc() {
+            var i, x, text;
+            x  = Number(document.getElementById("number").value);
+
+            for (i = 1; i <= x; i++) {
+                text += i + "<br>"
+            }
+                document.getElementById("result").innerHTML = text;
+            }
+
+        
+
+    </script>
+
+
+</body>
+
+</html>
