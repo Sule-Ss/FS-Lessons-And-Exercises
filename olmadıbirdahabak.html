@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <input type="text" placeholder="Aradığınız Harfi Giriniz.." id="letter">
+    <input type="button" value="  Sırasını Bul" id="search">
+    <p id="liste"></p>
+
+    <script>
+
+        var dizi, diziListe, harf, arama;
+        dizi = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        diziListe = document.getElementById("liste");
+        harf=document.getElementById("letter");
+        arama = document.getElementById("search");
+
+        window.onload = function()
+        diziListe.innerHTML=dizi;
+
+        arama.onclick = function(){
+            var konum;
+            konum = dizi.lastIndexOf(harf.value);
+
+            if(konum>=0){
+                alert("Aradığınız harfin ascii sırası : " +(konum + 1))
+            }
+            else{
+                alert("Lütfen doğru bir ifade giriniz.")
+            }
+        }
+
+    </script>
+
+</body>
+</html>
