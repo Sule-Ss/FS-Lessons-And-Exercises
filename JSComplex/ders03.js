@@ -2,7 +2,7 @@
 
 // property -- method: Bir nesne ile iliskili func
 
-/* const person = {
+const person = {
 
     name: "John",
     surname: "Doe",
@@ -16,7 +16,7 @@
         district: "Akçay"
     }
 
-} */
+}
 
 // Object Literal
 
@@ -50,14 +50,14 @@ console.log(person['fullName']()); --> fonk.u çalıştırır
 console.log(person['na' + 'me']) // 'na' + 'me' ---> 'name' */
 
 
-/* const person = {
+/* /* const person = {
     name: 'John',
     surname: 'Doe',
     age: 40,
     fullName: function() {
         return this.name + " " + this.surname
     }
-}
+} */
 
 const arin = {----}
 
