@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="number">
+<p><button type="button"  onclick="Islem()"> SONUÇ</button></p>
+<p id="sonucGoster"></p>
+
+<script>
+function Islem(){
+
+    var sayi, sonuc;
+    sayi = Number(document.getElementById("number").value);
+    sonuc = document.getElementById("sonucGoster");
+
+    if(sayi < 0){
+        sonuc.innerHTML = "Sayı Negatif";
+    }
+    else if (sayi > 0){
+        sonuc.innerHTML = "Sayı Pozitif";
+    }
+    else if(sayi = 0){
+        sonuc.innerHTML = "Sayı Sıfırdır.";
+    }
+    else{
+        sonuc.innerHTML = "Lütfen Bir Sayı Giriniz.";
+    }
+
+}
+
+
+</script>
+
+    
+</body>
+</html>

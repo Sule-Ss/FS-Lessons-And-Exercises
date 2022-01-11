@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <p><input type="text" id="midtern"></p>
+    <p><input type="text" id="final"></p>
+    <button type="button" onclick="noteResult()">Sonuç</button>
+
+    
+    <script>
+
+        function noteResult(){
+            var midternNote, finalNote, message, average;
+            midternNote  = Number(document.getElementById("midtern").value);
+            finalNote  = Number(document.getElementById("final").value);
+            average = midternNote*0.4 + finalNote * 0.6;
+            if(isNaN(midternNote)){
+                message = "Vize notunu sayısal bir değer girmelisiz."
+            } else if(isNaN(finalNote)){
+                message = "Final notunu sayısal bir değer girmelisiniz."
+            }
+            else{
+                if(average <= 45 && average >= 0){
+                    message = "Dersten kaldınız. Sonucunuz : FF"
+                }
+                else if(average > 45 && average <= 60){
+                    message = "Sonucunuz : DD"
+                }
+                else if(average > 60 && average <= 80){
+                    message = "Sonucunuz : CC"
+                }
+                else if(average > 80 && average <= 90){
+                    message = "Sonucunuz : BB"
+                }
+                else if(average > 90 && average <= 100){
+                    message = "Sonucunuz : AA"
+                }
+                else{
+                    message = "Lütfen 0-100 arası bir değer giriniz."
+                }
+            }
+            document.getElementById("result").innerHTML=message;
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>

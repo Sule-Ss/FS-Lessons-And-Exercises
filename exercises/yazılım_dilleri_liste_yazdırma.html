@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="result"></p>
+    <p>Yazılım Dili Listesi : <br><br> <button type="button" onclick="show()">LİSTELE</button></p>
+
+
+    <script>
+        function show(){
+        var langs = ['Java',
+            'C',
+            'Python',
+            'PHP',
+            'Visual Basic',
+            'Javascript',
+            'R',
+            'Go',
+            'Ruby',
+            'Groovy',
+            'Objective-C',
+            'Perl',
+            'Pascal',
+            'Delphi Object Pascal',
+            'Swift',
+            'Matlab',
+            'C++',
+            'C#',
+            'CSS',
+            'SQL',
+            'Assembly',
+            'HTML',
+            'SAS',
+            'Scratch',
+            'Powershell'
+        ];
+            var text= "", i;
+            for(i = 0; i<langs.length; i++){
+                text += langs[i] + "<br>";
+            }
+            document.getElementById("result").innerHTML=text;
+
+        }
+            
+
+        
+
+    </script>
+
+
+</body>
+
+</html>
