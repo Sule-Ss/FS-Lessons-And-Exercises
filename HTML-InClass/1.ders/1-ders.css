@@ -1,0 +1,13 @@
+h2{
+    color: blue;
+}
+
+div{
+    color: red;
+}
+
+/* Fark etmez ama yukarıdan aşağıya etiketleri yazmak mantıklı olur. */
+
+#third-heading{
+    color: deeppink;
+}
