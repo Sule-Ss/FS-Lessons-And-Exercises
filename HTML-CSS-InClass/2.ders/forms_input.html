@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+
+<body>
+    <form action="result.html">
+        <h1>SİZİ TANIYALIM</h1>
+        <!-- ---------- INPUT TEXT PASWORD---------- -->
+
+        <div>
+            <label for="ad">AD :</label>
+            <!-- label for attribute  ile  input id eşleştirmek içindir. -->
+            <input type="text" name="username" id="ad" placeholder="Adınızı giriniz..."><br>
+            <label for="soyad">SOYAD :</label>
+            <input type="text" name="lastname" id="soyad" placeholder="Soyadınızı giriniz..."><br>
+            <label for="password">ŞİFRE : </label>
+            <input type="password" name="password" id="sifre" placeholder="Şifre giriniz...">
+        </div>
+
+        <!-- 
+            name = değişken adı,
+            Placeholder =  bir giriş alanının beklenen değerini açıklayan kısa bir ipucu belirtir. 
+            value = bir giriş alanının varsayılan değerini belirtir. server a gönderdiğimiz değer -->
+        <hr>
+
+
+        <!-- ---------- RADIO BUTTON---------- -->
+
+        <div>
+            <h3>CİNSİYET</h3>
+            <input type="radio" name="cinsiyet" id="gender1">
+            <label for="gender1">Erkek</label>
+
+            <input type="radio" name="cinsiyet" id="gender2">
+            <label for="gender2">Kadın</label>
+
+            <hr>
+        </div>
+        <!-- ---------- CHECKBOX---------- -->
+
+        <div>
+            <h4>Hobileriniz: </h4>
+            <input type="checkbox" name="hoby1" id="kitap" value="kitap">
+            <label for="kitap">Kitap okuma</label><br>
+
+            <input type="checkbox" name="hoby1" id="swimming" value="yüzme">
+            <label for="swimming">Yüzme</label><br>
+
+            <input type="checkbox" name="hoby1" id="travel" value="seyahat">
+            <label for="travel">Seyahat</label>
+            <br>
+            <hr>
+        </div>
+
+        <div>
+            <label for="yas">YAŞ : </label>
+            <input type="number" name="age" id="yas" min="" max="70">
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label for="ara">Film Ara:</label>
+            <input type="search" name="search" id="ara" placeholder="Aranacak Kelimeyi giriniz..">
+        </div>
+        <br>
+
+        <div>
+            <label for="">Favori Renginiz :</label>
+            <input type="color" name="color" id="renk" value="#F6B73C"> 
+            <!-- default renk değiştirmek için value değeri verdik -->
+        </div>
+        <br>
+
+        <div>
+            <label for="eposta">Email:</label>
+            <input type="email" name="email" id="eposta" placeholder="example@example.com">
+        </div>
+        <br>
+
+        <div>
+            <label for="dosya">Profil Fotoğrafı:</label>
+            <input type="file" name="file" id="dosya" multiple>
+        </div>
+        <br>
+
+        <div>
+            <label for="tel">Telefon No : </label>
+            <input type="tel" name="phone" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            placeholder="xxx-xxx-xx-xx"> <!-- 555-555-55-55 -->
+        </div>
+
+        <div>
+            <label for="">Eğitim Durumunuz : </label>
+            <select name="" id="">
+                <option value="edu_search">Seçiniz...</option>
+                <option value="university">Üniversite</option>
+                <option value="highSchool">Lise</option>
+                <option value="secondary">Orta Okul</option>
+                <option value="elementary">İlk OKul</option>
+            </select>
+            <!-- birden fazla radio button vermek istediğimizde seleck kullanıyoruz -->
+        </div>
+
+        <div>
+          <label for="dogum">Doğum Tarihi Seçiniz :</label> 
+          <input type="date" name="date" id="dogum" min="2020-04-20" max="2025-04-20" value="2020-05-20"> 
+          <!-- tarih yazım şekillerine dikkat -->
+        </div>
+
+        <div>
+            <input type="reset" value="Temizle"> 
+        </div>
+
+        <div>
+            <input type="submit" value="Gönder">
+        </div>
+        
+
+
+
+
+    </form>
+
+
+</body>
+
+</html>
