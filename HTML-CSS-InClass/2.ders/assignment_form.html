@@ -9,7 +9,13 @@
     <style>
         body{
             border: solid;
+            margin: 30px;
+            margin-left: 250px;
+            padding: 10px;
+            width: 900px;
         }
+
+      
 
         h2 {
             text-align: center;
@@ -24,6 +30,10 @@
         fieldset {
             border: 1px solid;
             margin: 8px;
+        }
+        legend{
+            font-weight: bold;
+            font-size: large;
         }
 
         nav {
@@ -50,6 +60,7 @@
         #yas{
             margin-left: 68px;
             margin-bottom: 10px;
+            width: 35px;
         }
         #mail{
             margin-left: 16px;
@@ -68,7 +79,7 @@
         }
 
         #onayla{
-            margin-left: 28px;
+            margin-left: 24px;
         }
         #onaylama{
             margin-left: 5px;
@@ -160,11 +171,17 @@
                 <label for="onayla">Mail Listesine Katılmak <b>İstiyorum.</b></label>
                 <input type="radio" name="kabul" id="onayla"></nav>
             <nav>
-                <label for="onaylama">Mail Listesime Katılmak <b>istemiyorum.</b></label>
+                <label for="onaylama">Mail Listesine Katılmak <b>istemiyorum.</b></label>
                 <input type="radio" name="kabul" id="onaylama">
             </nav>
         </fieldset>
 
+        <!-- <div>
+            <label for="beklenti">Maaş Beklentiniz : </label>
+            <label for="maas"></label>
+            <input type="range" name="salary" id="maas" max="30000" min="5000">
+        </div> -->
+        
     </form>
 </body>
 
