@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: solid;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        div {
+            /* border: solid; */
+            padding: 10px;
+            margin: 10px;
+        }
+
+        fieldset {
+            border: 1px solid;
+            margin: 8px;
+        }
+
+        nav {
+            margin: 10px;
+        }
+
+        #yıl1{
+            margin-left: 53.5px;
+        }
+        #yıl2, #yıl3, #yıl4{
+            margin-left: 175px;
+        }
+        #yıl4{
+            margin-bottom: 15px;
+        }
+        #ad{
+            margin-left: 70px;
+            margin-bottom: 10px;
+        }
+        #soyad{
+            margin-left: 51px;
+            margin-bottom: 10px;
+        }
+        #yas{
+            margin-left: 68px;
+            margin-bottom: 10px;
+        }
+        #mail{
+            margin-left: 16px;
+            margin-bottom: 10px;
+        }
+        #dosya{
+            margin-left:11px;
+        }
+
+        #date{
+            margin-left: 35px;
+            margin-bottom: 10px;
+        }
+        #langs{
+            margin-left: 35px;
+        }
+
+        #onayla{
+            margin-left: 28px;
+        }
+        #onaylama{
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+    <h2>ABC Tasarım Programı Kurulum ve Satış Sözleşmesi</h2>
+
+
+        <fieldset>
+            <legend>Sozlesme Onay</legend>
+
+            <input type="checkbox" id="onay">
+            <label for="onay">Aşağıdaki bilgilerin doğruluğunu kabul ediyorum ve sözleşmeyi onaylıyorum.</label><br><br>
+
+            <input type="submit" value="Formu Kaydet">
+            <input type="reset" value="Formu Temizle">
+        </fieldset>
+
+        <fieldset>
+            <legend>Kişisel Bilgiler</legend>
+
+            <label for="ad">Ad</label>
+            <input type="text" name="name" id="ad"><br>
+
+            <label for="soyad">Soyad</label>
+            <input type="text" name="lastname" id="soyad"><br>
+
+            <label for="yas">Yaş</label>
+            <input type="number" name="age" id="yas"><br>
+            
+            <label for="mail">Mail Adresi</label>
+            <input type="email" name="email" id="mail"><br>
+
+            <label for="dosya">Fotoğraf Ekle</label>
+            <input type="file" name="file" id="dosya"><br>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Diğer Bilgiler</legend>
+            <h3>Buradaki Alanlar Mesleki Deneyimi Kapsar</h3>
+            <nav>
+                <label for="date">Sektöre Giriş Tarihi :</label>
+                <input type="date" name="tarih" id="date">
+            </nav>
+
+            <nav>
+                <label for="deneyim">Sektör Deneyimi :</label>
+                <input type="radio" name="1-5yıl" id="yıl1">
+                <label for="yıl1">1-5 yıl</label><br>
+
+                <input type="radio" name="1-5yıl" id="yıl2">
+                <label for="yıl2">6- 10 yıl</label><br>
+
+                <input type="radio" name="1-5yıl" id="yıl3">
+                <label for="yıl3">11- 15 yıl</label><br>
+
+                <input type="radio" name="1-5yıl" id="yıl4">
+                <label for="yıl4">15 yıl üzeri</label>
+                </nav>
+
+            <nav>
+                <label for="">Programlama Dilleri</label>
+                <select name="diller" id="langs">
+                    <option value="secim" selected>Seçiniz...</option>
+                    <option value="C#">C#</option>
+                    <option value="PHP">PHP</option>
+                    <option value="PYTHON">PYTHON</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+            </nav>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sözleşme İçeriği</legend>
+
+            <textarea name="comments" rows="10" cols="60" placeholder="Eklemek İstedikleriniz.."></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Mail Listesi</legend>
+
+            <nav>
+                <label for="onayla">Mail Listesine Katılmak <b>İstiyorum.</b></label>
+                <input type="radio" name="kabul" id="onayla"></nav>
+            <nav>
+                <label for="onaylama">Mail Listesime Katılmak <b>istemiyorum.</b></label>
+                <input type="radio" name="kabul" id="onaylama">
+            </nav>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>
