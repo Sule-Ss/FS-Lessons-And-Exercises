@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <!--  -->
+    <!-- Select : Bilgi seçimi sunar. <option></option> arasına yazılanlardan biri görünür.
+    label da kullanılabilir. -->
+    <!-- optgroup : Birbiriyle alakalı seçenekler gruplanır. -->
+    <!-- texarea : yorum, dönüş vs.. için. "rows" "cols" attribute leri kullanılabilir. -->
+    <!-- datalist : select e benzer. Bir input la ilişkilendirilir. imput "list" ile datalist "id" eşleşmeli.
+    datalist te multiple seçim yok. -->
+    <!-- fieldset : Diğer elementleri sarmallar. Legend etiketiyle başlık atanır. -->
+    <!-- required : attribute. Seçimi zorunlu kılar. -->
+    <!-- select ve datalist farkı : datalist te sunulan değişkenler dişında kullanıcı kendi seçeneğini girebilir. select verilen seçeneklerden birini girmeyi zorunlu kılar. -->
+
+    <form action="result.html" method="GET" name="myform">
+        <div>
+            <label for="cars">Choose a car:</label>
+            <select name="cars-select" id="cars" size="8" multiple required>
+                <!-- size seçim kısmında görünen veriyi artırır. -->
+
+                <optgroup label="Expencive Cars">
+                    <option value="porche">Porche</option>
+                    <option value="masserati">Masserati</option>
+                </optgroup>
+
+                <optgroup label="Tüplü Öfkeli">
+                    <option value="kartal">Kartal</option>
+                    <option value="lada*samara">lada Samara</option>
+                    <option value="murat-131">Murat 131</option>
+                </optgroup>
+
+            </select>
+        </div>
+        <br><br>
+
+        <div>
+            <label for="message">Enter your comment here:</label>
+            <br>
+            <textarea name="comment" id="message" cols="30" rows="10" placeholder="Enter your comment here..."
+                maxlength="100" style="resize: none;"></textarea>
+            <!-- maxlength : yazılabilecek max karakter uzunluğu 
+            style="resize: none;: kutucuğun boyutunun manuel değiştirilmesini engeller.-->
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="mybrowser">Browser :</label> <br>
+            <input type="text" name="browser-option" id="mybrowser" list="browsers">
+            <datalist id="browsers">
+                <option value="chrome"></option>
+                <option value="Safari"></option>
+                <option value="Brave"></option>
+                <option value="Mozilla"></option>
+                <option value="Opera"></option>
+            </datalist>
+        </div>
+        <br><br>
+
+        <fieldset style="width: 50%;">
+            <legend style="text-align: center;">Personal Info :</legend>
+            <label for="firstname">First Name :</label>
+            <input type="text" name="name" id="firstname" placeholder="enter your name..">
+            <br><br>
+
+            <label for="lastname">Last Name :</label>
+            <input type="text" name="Lname" id="lastname" placeholder="enter your lastname..">
+        </fieldset>
+
+        <br><br><br>
+        <span>Hello</span> <span>world</span><br><br><br>
+        <!-- <span></span> inline elementtir. -->
+
+        <div>
+            <input type="submit" value="SEND">
+
+        </div>
+    </form>
+
+
+    <!-- non-Semantiic : div , span
+
+         Semantic : form, table, article, header, section, main -->
+
+    <!-- Header : container link, amblem, h1-h6, icon, logo, ...
+    section : Sayfa dökümanla ilgili açıklama
+    main : ana content
+    aside : link verilebilir
+    article : bloklaa alakalı yazı olabilir. Gazete Sayfası gibi
+    footer : iletiğim bilgileri, adres,..etc -->
+
+    <!-- 1 em ve 1 rem= 16px fakat pixel’den farkli olarak dinamiktir. siz sayfa boyutunu degistirince o elemanin boyutu da ona göre degisir -->
 </body>
+
 </html>
