@@ -1,0 +1,25 @@
+ /* ux designer : kullanıcı deneyiine en uygun şekilde tasarım yapar. Deneyimlere istinaden en doğru tasarımı çıkarır.
+    ui designer : Görsel kısmı.  */
+    /* Figma  */
+
+
+h1 {
+    color: darkviolet;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: red;
+    text-transform: capitalize;
+    text-align: center;
+    word-spacing: 15px;
+    letter-spacing: 5px;
+
+    /* text-decoration: blue underline overline wavy;  kısa ve çoklu yöntem*/
+}
+
+p{
+    text-indent: 20px; /* satır başı boşluğu */
+}
+
+h3{
+    direction: ltr; /* left to right, rtl : right to left */
+}

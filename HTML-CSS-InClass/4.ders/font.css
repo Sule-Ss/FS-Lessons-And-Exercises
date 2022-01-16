@@ -1,0 +1,56 @@
+/* 
+oblique : italiği desteklemeyen yazı tiplerini italiğe zorlar 
+image in üzerine yazı eklemek istiyorsak margin değerini eksi vererek 
+istediğimiz konuma getirebiliriz
+*/
+
+* {
+    font-size: 10px;
+}
+
+h1 {
+    font-family: "Gorgia", 'Times New Roman', serif;
+    color: firebrick;
+    /* font-size: 3rem; */
+    /*1rem=16px */
+    font-size: 3em;
+    /* em = 10px *' da font-size= 10px aldığımız için */
+    font-variant: small-caps;
+
+}
+
+p {
+    font-family: 'Luxurious Roman'cursive;
+    font-style: oblique;
+    font-weight: 900;
+}
+
+h3 {
+    font-family: 'Rubik Beastly', cursive;
+
+    /* 
+    a:link >>> default değeri
+    a:visited >>> ziyaret edildikten sonraki rengi
+    a:hover >>> imleçle linkin üzerine gelindiği andaki değişim(renk)
+    a:active >>> imleçle basılı tuttuğumuzdaki durum
+    */
+
+}
+
+a:link {
+    color: forestgreen;
+}
+
+a:visited {
+    color: gold;
+}
+
+a:hover {
+    color: crimson;
+    background-color: gold;
+    font-size: 30px;
+}
+
+a:active {
+    color: cyan;
+}
