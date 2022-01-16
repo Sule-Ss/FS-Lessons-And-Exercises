@@ -1,0 +1,19 @@
+/* Margin : tagler arasını ayarlar
+   Padding : sadece çalıştığımız tag in kapsamını değiştirir. */
+
+/* Content(içerik) >> Padding(iç boşluk)>> Border(Kenarlık)>> Margin(Dış Boşluk) */
+/* piksell pek tercih edilmez sayfa uyumu için */
+
+
+
+#first {
+    background-color: cornflowerblue;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 70px;
+}
+
+#second {
+    background-color: crimson;
+}
