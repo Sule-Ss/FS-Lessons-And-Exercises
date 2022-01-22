@@ -1,0 +1,48 @@
+/* 
+left : 
+right : 
+none : Default
+inherit : parenttan alır.
+*/
+
+/* 
+clear property : Bir sonraki elementin float verilen elementin altından devam etmesini sağlar. Values:
+none
+left
+right
+both
+inherit
+*/
+
+body{
+    background-color: aqua;
+}
+
+h1{
+    background-color: burlywood;
+    text-align: center;
+}
+
+#first{
+    float: right;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+p{
+text-align: justify; /* text i her iki yana yaslı hale getirir. */
+}
+
+#second{
+    float: left;
+}
+
+#parag1{
+    clear: both;
+}
+
+li{
+    list-style: none;
+    float: left;
+    padding-right: 10px;
+}
