@@ -1,0 +1,50 @@
+/* 
+Absolute Lengths : 
+cm
+mm
+in
+px 
+pt
+pc : picas 12pt
+*/
+
+/* 
+Relative Lengths : 
+em
+ex
+ch
+rem
+vw : %1 width
+vh : %1 height
+vmin
+vmax
+*/
+
+/* rem root (body) font size değerine göre hesaplanır,
+em ise parent element font-size değerine göre hesaplanır */
+
+/* While em is relative to the font-size of its direct or nearest parent, rem is only relative to the html (root) font-size.
+em gives the ability to control an area of a design. As in, scale the type in that specific area relatively. rem gives the ability to scale type across the entire page easily. */
+
+h1 {
+    /* default 32 px alır. */
+    font-size: 60px;
+}
+
+p {
+    /* 16px default */
+    font-size: 40px;
+    width: 50%;
+    /* background-color: burlywood; */
+}
+
+.em-class {
+    background-color: coral;
+    font-size: 2em;
+}
+
+.rem-class {
+    background-color: darkturquoise;
+    width: 30vw; /* responsive yapılarda kullanılır. */
+    height: 50vh;
+}

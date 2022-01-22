@@ -1,0 +1,33 @@
+/* 
+visible : Default
+hidden : Çerçeveye girdiği kadarını alır.Devamını saklar.
+scroll : Hem alt hem de sağda scroll bar çıkar
+auto : scroll barı ihtiyaca göre ayarlar
+
+overflow-x, overflow-y olarak ayrılabilir.
+*/
+
+.box{
+    border: 3px solid red;
+    width: 300px;
+    height: 70px; /* height vermezsek otomatik sığdırır. */
+    margin-bottom: 90px;
+}
+
+#item1{
+    overflow: visible;
+}
+#item2{
+    overflow: hidden;
+}
+#item3{
+    overflow: scroll;
+}
+#item4{
+    overflow: auto;
+}
+#parag5{
+    /* overflow-x:hidden;
+    overflow-y: scroll; */
+    overflow: auto;
+}
