@@ -1,0 +1,64 @@
+/* 
+elements : 
+::first-line
+::first-letter
+::before
+::after
+::selection
+*/
+
+/* 
+pseudo classes : 
+:hover
+:active
+:link
+:visited
+:focus >> input iç dolgu rengi değiştirilebilir. Seçildiği zaman aktive olur
+:nth-child()
+:first-child
+:last-child
+:first-of-type
+*/
+
+a:hover{
+    background-color: firebrick;
+}
+
+img:hover{
+    border: 4px solid gray;
+}
+
+ul li:first-child{
+    color: rgb(199, 25, 170);
+}
+
+ul li:last-child{
+    color: red;
+}
+
+ul li:nth-child(even){
+    color: rgb(23, 117, 211);
+}
+
+input:focus{
+    background-color: rgb(228, 188, 114);
+    border: 4px solid gray;
+}
+
+/*-------- pseudo elements ------- */
+
+p::first-letter{
+    color:orangered;
+    font-weight: bolder;
+}
+p::first-line{
+    font-variant: small-caps;
+}
+
+p::after{
+    content:"Thank you"
+}
+
+p::before{
+    content:"\2615"
+}
