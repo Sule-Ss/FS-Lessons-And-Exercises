@@ -1,0 +1,40 @@
+/* 
+outline-style
+outline-color
+outline-width
+outline-offset: içe veya dışa doğru boşluk verilebilir.
+outline
+*/
+
+/* 
+dotted
+dashed
+solid
+double
+groove
+ridge
+inset
+outset
+none
+hidden
+*/
+
+p {
+    background-color: rgb(250, 181, 111);
+    border: 3px solid brown;
+    font-size: 1.5rem;
+    padding: 15px;
+
+    /* outline-style: dotted;
+    outline-width: 10px;
+    outline-color: rgb(28, 143, 104); */
+
+    /* ------OUTLINE SHORTHAND--------- */
+    outline: 5px groove goldenrod;
+    outline-offset: -20px;
+}
+
+p:hover{
+    outline: none;
+    height: 100px;
+}
