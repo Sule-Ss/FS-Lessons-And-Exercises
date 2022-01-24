@@ -1,0 +1,50 @@
+/* 
+auto
+length
+%
+initial
+inherit
+*/
+
+/* 
+max-width
+min-width
+max-height
+min-height
+*/
+
+body{
+    background-color: bisque;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.main-content{
+    background-color: cadetblue;
+    width: 500px;
+    /* height: 300px; */
+    margin: 0% auto;
+    padding: 2%;
+    overflow: auto;
+}
+
+.auto-width{
+    width: auto;
+}
+
+.lenght-width{
+    background-color: lightcoral;
+    width: 20em; /* 200px rem : browser atar */
+    width: 50vw;
+}
+
+.percent-width{
+    background-color: lightgoldenrodyellow;
+    width: 50%;
+}
+
+.max-width{
+    background-color: lightpink;
+    min-width: 200px;
+    /* max-width: 700px; */
+}
