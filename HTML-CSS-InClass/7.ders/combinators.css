@@ -1,0 +1,68 @@
+/* 
+There are four different combinators in CSS:
+
+1)descendant selector (space) : div p{} >>> div içindeki bütün p ler
+
+2)child selector (>) : div > p{} >>> nested yapılarda en içteki div in içindeki p ler
+
+3)adjacent sibling selector (+) : eş düzeydeki kardeş element seçici :  h2 + p {} >>> aynı seviyedeki h2 ve p
+
+general sibling selector (~) : Kendisinden sonra gelen aynı seviyedeki tüm elementler:  p ~ h{}
+
+*/
+
+/* ------ evrensel seçisi '*' ------- */
+
+*{
+    font-size: 18px;
+    line-height: 25px; /* satır aralarını açtık */
+    background-color: rgb(229, 170, 147);
+}
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+    color: crimson;
+}
+
+/* Class ilee ulaşılabilir */
+
+.brand{
+    width: 50%;
+    float: right;
+    padding: 10px;
+}
+
+
+/* ----- Combinators ile ulaşma ------- */
+
+/* div  p{
+    color: blue;
+
+} */
+
+div > p{
+    color: blue;
+    padding: 10px;
+}
+
+li > p{
+    border:  2px solid rgb(173, 13, 13);
+    padding: 5px;
+    width: 45%;
+}
+
+/* div + p{
+border: 5px solid blueviolet;
+} */
+
+div ~ p{
+    border: 5px dotted rgb(134, 107, 38);
+}
+
+div ~ img{
+    background-color: dodgerblue;
+    border: 3px solid gray;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius:  20px;
+}
