@@ -1,0 +1,185 @@
+  
+  /* >>>>>>>>>>> FLEXBOX <<<<<<<<<<<<<<<<<< */
+
+/* 
+block, inline, table, position, float ın tamamını kullanmak yerine kullanılabilir.
+Yatayda ve dikeyde hizalamakta kolaylık sağlar.
+responsive bir yapı oluşturur.
+
+1)flex-container >>>> parent
+2)flex-item >>> children
+3)main-axis >>> yatayda (x ekseni)
+4)cross-axis >>>  dikeyde (y ekseni)
+
+*/
+
+/* 
+<<<<<<<<<<<<  flex-container Properties  >>>>>>>>
+
+flex-direction : default row. Satır boyunca hareket ettirir. Column değerini aldığında justify-content dikeyde,
+                 align-items kuralı yatayda çalışır !!!
+
+    row: Öğeler yazı yönü ile aynı yönde yerleştirilir.
+    row-reverse: Öğeler yazı yönünün tersi yönünde yerleştirilir.
+    column: Öğeler yukarıdan aşağıya doğru yerleştirilir.
+    column-reverse: Öğeler aşağıdan yukarıya doğru yerleştirilir.
+
+flex-wrap : sığmayan sırayı alt sıraya atar. default : nowrap
+
+    nowrap: Tüm öğeler tek satıra sığar.
+    wrap: Öğeler satırlara bölünür.
+    wrap-reverse: Öğeler satırlara ters sırada bölünür.
+
+
+flex-flow :  default >>> row nowrap 
+
+    flex-direction ve flex-wrap kuralları, flex-flow kısa yazım kuralı ile birlikte yazılabilirler. 
+    Bu kısa yazım kuralı, iki kuralın değerlerini aralarında boşluk ile birlikte alır.
+
+    Örneğin, flex-flow: row wrap kuralı ile row ve wrap değerlerini aynı anda verebilirsiniz.
+
+justify-content : default >>> flex-start
+
+    flex-start: Öğeleri flexbox container'ın sol tarafına hizalar.
+    flex-end: Öğeleri flexbox container'ın sağ tarafına hizalar.
+    center: Öğeleri flexbox container'ın ortasına hizalar.
+    space-between: Öğeler eşit aralıklarla yatay şekilde yayılır
+    space-around: Öğeler etraflarında eşit aralıklar olacak şekilde yatay şekilde yayılır
+    space-evenly : geçerli satırın ana ekseni boyunca hizalar.
+
+align-items : Sütun boyunca hareket ettirir.
+
+    flex-start: Öğeleri flexbox container'ın tepesine hizalar
+    flex-end: Öğeleri flexbox container'ın aşağısına hizalar
+    center: Öğeleri flexbox container'ın dikey ortasına hizalar
+    baseline: Öğeleri flexbox container'ın yazı referans çizgisine(baseline) hizalar. 
+    text in alt çizgisine göre(text bottom lar aynı hizada) hizalar. Item değil metin referans alınır.
+    stretch: Öğeler flexbox container boyunca uzarlar
+
+align-content : kuralı ile satırları birbirinden ayırabilirsiniz. default >>> stretch
+
+    flex-start: Satırlar flex container'ın tepesinde toplanır.
+    flex-end: Satırlar flex container'ın aşağısında toplanır.
+    center: Satırlar flex container'ın dikey ortasında toplanır.
+    space-between: Satırlar aralarında eşit boşluk kalacak şekilde yayılırlar. 
+    ilk ve son satırı alt ve üste yapıştırır.
+    space-around: Satırlar etraflarında eşit boşluk kalacak şekilde yayılırlar.
+    stretch: Satırlar flex container'ı kaplamak için uzarlar.
+
+display : flex ; >>>> block elementleri yan yana dizer.
+
+*/
+
+/* 
+ >>>>>>>>>>>>  Flex Item Properties <<<<<<<<<<<<<<<
+
+ order : Default 0. item ları sıralar. Yatayda veya dikeyde. 1 alınca en sağa atar. 
+         negatif değer alabilir.
+
+ flex-grow : Default 0. Item ne kadar büyüyecek ? 
+
+ flex- shrink : Default 1. Item ne kadar küçülecek ? 0 verilirse item(s) daralmaz.
+
+ flex-basis : Default auto. Varsayılan genişliği ifade eder. em px gibi değerler alabilir. 
+              Flex shorthand içinde kullanılırken ayırt edilebilmeyi sağlar.
+              (Sütun kullanılırlen varsayılan yüksekliği ifade eder.)
+
+ flex : grow shrink basis shorthand olarak verilebilir. Default : 0 1 auto;
+
+ gorw ve basis çakışabilir.
+
+ align-self : align-items ile aynı değerleri alır. Tek bir item için kullanılır. 
+              Default align-items ı geçersiz kılar.
+
+
+*/
+
+/* *{
+    margin: 0%;
+    padding: 0%;
+} */
+
+body {
+    background-color: #ddd;
+    color: black;
+}
+
+.flex-container {
+    display: flex;
+    background-color: blueviolet;
+    height: 250px;
+    /* flex-direction:row; */
+
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+
+    /* flex-wrap: nowrap; */
+    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap-reverse; */
+
+    /* flex-flow: row nowrap; */
+    /* flex-flow: row wrap; */
+    /* flex-flow: column wrap; */
+    /* flex-flow: column wrap-reverse; */
+    
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+
+    /* align-items: stretch; */
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+    /* align-items: baseline; */
+
+    /* align-content: flex-start; */
+    /* align-content: flex-end; */
+    /* align-content: center; */
+    /* align-content: space-between; */
+    /* align-content: space-around; */
+
+}
+
+.flex-items {
+    border: 1px solid green;
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+
+}
+
+#item1 {
+    /* font-size: 36px; */
+    /* height: 100px; */
+    /* padding:20px */
+    background-color: red;
+    /* order: 5; */
+    /* flex-grow: 1; */
+    /* flex-shrink: 0; */
+    /* flex-basis: 150px; */
+    flex: 1 0 150px;
+}
+
+#item3 {
+    /* font-size: 8px; */
+    /* height: 40px; */
+    background-color: green;
+    /* order:1; */
+    /* order: -2; */
+    /* flex-grow: 3; */
+    /* flex-basis: 20%; */
+}
+
+#item5 {
+    /* font-size: 24px; */
+    /* height: 20px; */
+    background-color: blue;
+    /* order: 2; */
+    /* order: -1; */
+    /* flex-grow: 2; */
+}
