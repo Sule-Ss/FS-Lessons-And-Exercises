@@ -1,0 +1,216 @@
+/* ------ Landing Page------ */
+
+/* 
+Giriş sayfası. Maksat sade ve kullanışlı olması.
+*/
+
+/* 
+BEM :  (Block Element Modifier) css metodolojisidir. Bir stil adlandırma kuralıdır. 
+2009 yılında Yandex geliştiricileri tarafından geliştirilmiştir. 
+Adlandırma yapma çoğunlukla zaman alan ve geçiştirilerek yapılan bir iştir. 
+Fakat adlandırmayı doğru yapmak ileride karşılaşacak birçok problemin çözümü niteliğindedir.
+*/
+
+/* 
+Adlandırma Kuralı :
+➩ İsimler küçük harfle başlamalıdır.
+➩ #id selector kullanmayın sadece .class kullanın.
+➩ Element adı block adından __ ile ayrılır (.block__element).
+➩ Modifier element/block adından — ile ayrılır (.block__element — modifier ya da .block — modifier).
+⚠️ Tage birden fazla class ekleneceği zaman diğer class isimlendirmeleri şu şekilde olmalıdır:
+“.block — color”, “.block__element — color” ya da “.block — element-color”.
+
+⚠️ İç içe olan kullanımlarda __ ile isimlendirme yapsakta birden fazla olduğu durumlarda bir __ daha ekleyip isimlendirme yapmak yanlış olur.
+*/
+
+/* 
+BEM Kullanmak…
+Kodun tekrar kullanılabilirliği ve kolay anlaşılırlık sağlıyor.
+Html’i daha okunabilir kılıyor.
+Bem adlandırması eşsizdir. Bem adlandırması tüm teknolojilerde (html, css, javascript) aynıdır.
+BEM, iç içe geçmiş CSS seçicilerini ortadan kaldırır. Her HTML öğesinin kendi css sınıfı vardır ve adıyla amacının ne olduğunu biliyorsunuzdur.
+Tasarıma baktığınızda nelerin block-element ve modifier olduğunu analiz edebilirsiniz.
+Bem styntax’ı daha çabuk css kodlamızı sağlar.
+Html tagleri ile iç içe yapılan işlemler bir güncelleme ile işleri zorlaştırırken bem kullanarak tek class ismi ile her şey daha kolay gerçekleşir.
+Bem syntax kullanırsanız yandex’in bunun için toolları mevcut.
+Sass ve Less gibi css pre-processor’lar için de bem üretmek oldukça kolay.
+Adlandırmalar uzun fakat hepsi okunabilir ve anlaşılabilirdir.
+Bem ile uzunca bir class ismi oluşturabilir. Peki “html dosya boyutları uzun css class adlarıyla büyümüyor mu?” derseniz eğer EVET büyüyor. LAKİN gzip gibi dosya küçültme araçları kullanırsanız bu sorunu ortadan kaldırmış olursunuz.
+bem website : http://getbem.com/
+*/
+
+/* .card >> .card__image >> .card__description >> .card__button--success gibi.. */
+
+
+* {
+    margin: 0px;
+    padding: 0%;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.header {
+    padding: 15px 15px 0px 15px;
+}
+
+.header__left {
+    float: left;
+    margin-top: 3px;
+}
+
+.header__right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul a {
+    color: black;
+    opacity: 0.8;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+.header__rigth--appicon {
+    vertical-align: middle;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.header__rigth--appicon:hover {
+    opacity: 1;
+}
+
+.header__right--button {
+    background-color: #4285f4;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+}
+
+.header__right--button:hover {
+    /* renk opacity konum */
+    box-shadow: rgba(0, 0, 0, 0.15)0px 1px 0px 0px;
+}
+
+.main__logo {
+    width: 272px;
+    height: 95px;
+    margin: 200px auto 0px;
+    display: block;
+    /* margin auto nun çalışması için */
+}
+
+.main__search-bar {
+    width: 460px;
+    height: 38px;
+    border: 1px solid #d3d3d3;
+    border-radius: 25px;
+    margin: 28px auto;
+}
+
+.main__search-bar:hover {
+    box-shadow: rgb(211, 211, 211)3px 3px 5px 0px;
+}
+
+.main__search-bar--magnifier {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.main__search-bar--input {
+    width: 380px;
+    height: 28px;
+    border: none;
+    outline: none;
+    margin-top: 3px;
+    font-size: 16px;
+}
+
+.main__search-bar--microphone {
+    /* position :absolute;
+    right:auto; */
+    width: 15px;
+    height: 20px;
+    vertical-align: middle;
+
+}
+
+.main__buttons {
+    text-align: center;
+}
+
+.main__button--left,
+.main__button--right {
+    height: 36px;
+    border: none;
+    background-color: #efefef;
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin: 8px 4px;
+}
+
+.main__button--left:hover,
+.main__button--right:hover {
+    border: 1px solid #d3d3d3;
+    cursor: pointer;
+}
+
+.main__language {
+    text-align: center;
+    margin: 20px 0px 13px;
+}
+
+.main__language a {
+    color: #000080;
+}
+
+/* footer */
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: #f2f2f2;
+    line-height: 40px;
+    width: 100%;
+    color: #5f6368;
+}
+
+.footer__country {
+    padding-left: 20px;
+}
+
+.footer__bottom {
+    border-top: 1px solid #e4e4e4;
+}
+
+.footer__bottom--left {
+    float: left;
+    padding-left: 10px;
+}
+
+.footer__bottom--right {
+    float: right;
+}
