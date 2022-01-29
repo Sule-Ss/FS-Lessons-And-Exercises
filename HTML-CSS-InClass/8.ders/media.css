@@ -1,0 +1,142 @@
+/* >>>>>>>>>>>  MEDIA QUERY <<<<<<<<<<<<<<< */
+
+/* 
+Farklı ekran gruplarına uyumlu hale getirmeyi sağlar.
+*/
+
+/* 
+syntax : 
+
+@media media type and(condition: breakpoint){
+    // CSS rules }
+*/
+
+/* 
+all — for all media types
+print — for printers
+screen — for computer screens, tablets and, smart-phones
+speech — for screen readers that “read” the page out loud
+
+*/
+
+/* 
+Common breakpoints for widths of devices:
+
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+ */
+
+/* 
+Mantıksal operatörler : 
+
+ and	iki veya daha fazla özelliği bir birine bağlar
+only	Sadece belirtilmiş koşullar sağlandığında uygulama işlemi gerçekleştirilmesi için kullanılır.
+not	    Uygulanacak olan değer aralığında bu yapıyı kullanma anlamını taşır.
+Virgül	Kullanacak olduğunuz media tiplerinde ortak değerler var ise “,” virgül ile ayırarak 
+        aynı işlemi ilgili alanlara ataya bilirsiniz.
+        condition için virgül kullanılıyorsa veya(or) anlamı taşır.
+ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: bisque;
+    color: black;
+}
+
+h1 {
+
+    background-color: RebeccaPurple;
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+.header {
+    background-color: green;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.navbar {
+    /*Burada overflow: Tüm alanı kapsadığını ifade eder */
+    overflow: auto; 
+    background-color: #555;
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    float: left;
+    /* display: block; */
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 25%;
+    padding: 20px;
+}
+
+@media screen and (max-width: 922px){
+    body{
+        background-color: rgb(155, 155, 241);
+    }
+
+    .column{
+        flex: 50%;
+    }
+
+    .header{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    body{
+        background-color: rgba(248, 248, 119, 0.774);
+        color: white;
+    }
+
+    .header{
+        display: none;
+    }
+
+    .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column{
+        width: 80%;
+    }
+    
+}
+
