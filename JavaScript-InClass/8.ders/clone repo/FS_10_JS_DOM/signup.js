@@ -1,5 +1,10 @@
 // DOM Accessing
+/* 
+Html elementlerini objeye dönüştürür.
+Nesne üzerinde değişiklikleri kolayca yapabiliriz.
+DOM un en önemli bileşenleri window ve document objeleridir.
 
+*/
 let firstNameById = document.getElementById("first_name");
 console.log(firstNameById);
 
