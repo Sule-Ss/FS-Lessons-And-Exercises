@@ -1,0 +1,77 @@
+/* ----- Grid ---------- */
+
+/* 
+Wikipedia, CSS Izgarasını CSS ızgara düzeni olarak tanımlar veya CSS ızgarası, web geliştiricilerinin tarayıcılar arasında daha kolay ve tutarlı bir şekilde karmaşık duyarlı web tasarımı düzenleri oluşturmasına olanak tanıyan Basamaklı Stil Sayfalarında bir tekniktir. Tablolar, kutu modeli ve CSS esnek kutusu gibi web sayfası yerleşim yöntemlerini kontrol etmek için başka yöntemler de olmuştur. Çoğu büyük tarayıcı tarafından benimsenmiş olmasına rağmen, CSS ızgarası şu anda resmi bir standart değildir (bir W3C Aday Önerisidir).
+*/
+
+/* 
+Grid, web siteleri yaptığımızdan beri hepimizin uğraştığı düzen sorunlarını çözmek için özel olarak oluşturulmuş ilk CSS modülüdür.
+*/
+
+/* 
+ Grid Lines     : Izgarayı bölen ve sütunları ve satırları ayıran dikey ve yatay çizgiler.
+
+Grid cell       : Bir CSS ızgarasının tek bir birimi.
+
+Grid area       : Dört ızgara çizgisiyle çevrili dikdörtgen alan. Bir ızgara alanı, herhangi bir sayıda ızgara hücresi içerebilir.
+
+Grid track      : İki ızgara çizgisi arasındaki boşluk. Bu boşluk yatay veya dikey olabilir
+
+Grid row        : Bir ızgaranın yatay izi.
+
+Grid column     : Bir ızgaranın dikey izi.
+
+Gutter          : Bir ızgaradaki satırlar ve sütunlar arasındaki boşluk.
+
+Grid container   : Tüm CSS ızgarasını tutan kapsayıcı.
+
+Grid item       : Bir ızgara kapsayıcısının doğrudan çocuğu olan herhangi bir öğe.
+*/
+
+/* 
+grid :generates a block-level grid
+inline grid- generates an inline-level grid
+
+grid-gap kullanımda değil.
+gap ile değiştirildi.
+
+ gap: 5px;
+column-gap: 5px;
+row-gap: 5px;
+*/
+
+/* 
+!!!! float, display: inline-block, display: table-cell, vertical-align and column-* properties have no effect on a grid item.
+
+
+name – a name of your choosing
+row-start / column-start / row-end/ column-end – can be numbers or named lines
+
+*/
+
+/* .container {
+    display: grid | inline-grid;
+    grid-template: none | grid-template-rows / grid-template-columns;
+
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer";
+
+    grid-column: start-line / end-line | start-line / span value;
+    grid-row: start-line / end-line | start-line / span value;
+
+    grid-area: name | row-start / column-start / row-end / column-end;
+}
+
+box {
+    display: grid;
+    grid-template: max-content;
+
+} */
+
+/* 
+fr(fraction) : dilim-kesir
+*/

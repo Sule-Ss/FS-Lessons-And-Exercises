@@ -4,14 +4,15 @@
     /* fraction */
     grid-template-columns: 100px 300px 100px 100px;
     grid-template-rows: 100px 500px 100px;
+    justify-content: center;
+    align-items: center;
 
+    /* responsive lik katnak için : % ,  */
 
-    
-
-    /*Gap özellikleri*/
-    /* column-gap: 20px;
+    /*Gap özellikleri : satır ve sütun arasındaki bolukları verir.*/
+    /* column-gap: 20px; 
     row-gap: 10px; */
-   /*Shorthand*/
+   /*Shorthand : satır sütun*/
     /* gap:10px 10px; */
 
 }
