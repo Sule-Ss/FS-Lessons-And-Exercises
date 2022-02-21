@@ -71,3 +71,98 @@ const person2 = {
 
   console.log(person2.calcAgeBad(1980)); // 42
   console.log(person2.calcAgeNice()); // 45
+
+  /* ------- this -------- */
+  /* 
+  4 farklı yerde bulunur : 
+  1) object içerisnde methodda kullanıldığında noktadan öncesi neyse this odur.
+  2) Browser ın bize önerdiği object. Herhangibir fonk tanımlıyorsak window nesnesi?
+  3) arrow func ile tanımlandıysa bir üstündekinin this ini alır. her zaman kendine ait bir this  i yok.
+  4) event listener : o an hangi nesneyse onu döndürür.
+  4) new, call, apply, bind kullanım farkları var. mevcut this belirsizse atama yapmak için kullanılır.
+  */
+
+  // --- this examples
+
+  function f2(){
+      console.log(this);
+  }
+  f2(); // window nesnesi döndürür 2) için örnek
+
+  // normal func için bulunduğu nesneyi döndürür: 
+  const calcAge = function (birthYear){
+      console.log('regular functtion in global scope');
+      console.log(this);
+      console.log(2022 - birthYear);
+  }
+  calcAge(1977); // ilk clg,  window nesnesi,  45
+
+ // arrow func için kendi nesnesi olmadığı için bir üst nesneyi döndürür: 
+ const calcAgeArrow =  (birthYear) =>{
+    console.log('regular functtion in global scope');
+    console.log(this);
+    console.log(2022 - birthYear);
+}
+
+calcAgeArrow(1977); 
+
+const teacher = {
+    birthYear: 1985,
+    calcAge() {
+      console.log('Regular Function in Object');
+      console.log(this);
+      console.log(2022 - this.birthYear);
+    },
+    calcAgeArrow: () => {
+      console.log('Arrow Function in Object');
+      console.log(this);
+      console.log(2022 - this.birthYear);
+    },
+    calcAgeDelayed() {
+      setTimeout(function () {
+        console.log('Regular Function in setTimeout');
+        console.log(this);
+        this.calcAge();
+      }, 2000);
+    },
+    calcAgeDelayedArrow: function () {
+      setTimeout(() => {
+        console.log('Arrow Function in setTimeout');
+        console.log(this);
+        this.calcAge();
+      }, 2000);
+    },
+  };
+  
+  const student = {
+    birthYear: 1995,
+  };
+  
+  student.calcAge = teacher.calcAge;
+  
+  student.calcAge();
+  
+  const myFunc = teacher.calcAge;
+  
+  teacher.calcAge();
+  myFunc();
+  
+  // teacher.calcAge();
+  // teacher.calcAgeArrow();
+  // teacher.calcAgeDelayed();
+  // teacher.calcAgeDelayedArrow();
+  
+  let anObject = {
+    firstName: 'John',
+    age: 30,
+    isMarried: false,
+    introduce: () => {
+      return `${this.firstName} is ${this.age} years old.`;
+    },
+    introduce2: function () {
+      return `${this.firstName} is ${this.age} years old.`;
+    },
+  };
+  
+  console.log(anObject.introduce());
+  console.log(anObject.introduce2());
