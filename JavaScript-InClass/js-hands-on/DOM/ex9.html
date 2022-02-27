@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript DOM</title>
+  </head>
+  <body>
+    <h1>JavaScript Plus - DOM</h1>
+    <h2>Managing Attributes</h2>
+    <p>accessing attributes</p>
+    <br />
+    <label for="username">First Name: </label>
+    <input type="text" id="firstName" secured="true" /><br /><br />
+    <label for="username2">Last Name: </label>
+    <input type="text" id="lastName" secured="true" tabindex="1" />
+    <input type="checkbox" id="chkAccept" checked /> Accept <br /><br />
+    <input type="password" id="password" style="color: red; with: 100%" />
+    <br /><br />
+    <div id="main" data-progress="pending" data-value="10%"></div>
+    <script>
+      let input = document.querySelector('#firstName');
+      // for standart attributes
+      console.log(input.type);
+      console.log(input.id);
+      console.log(input.secured);
+      // for standart and non-standart attributes
+      for (let attr of input.attributes) {
+        console.log(`${attr.name} = ${attr.value}`);
+      }
+      // setting attributes or properties
+      let input2 = document.querySelector('#lastName');
+
+      // attribute -> property
+      input2.setAttribute('tabindex', 2);
+      console.log(input2.tabIndex); // 2
+
+      // property -> attribute
+      input2.tabIndex = 3;
+      console.log(input2.getAttribute('tabIndex')); // 3
+      let checkbox = document.querySelector('#chkAccept');
+      console.log(checkbox.checked); // true
+
+      let input3 = document.querySelector('#password');
+
+      let styleAttr = input3.getAttribute('style');
+      console.log(styleAttr);
+
+      console.dir(input3.style);
+      let divData = document.querySelector('#main');
+      console.log(divData.dataset);
+    </script>
+  </body>
+</html>

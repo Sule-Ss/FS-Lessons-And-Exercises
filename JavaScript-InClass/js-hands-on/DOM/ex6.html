@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript DOM</title>
+  </head>
+  <body>
+    <h1>JavaScript Plus - DOM</h1>
+    <p>JavaScript parentNode example</p>
+    <div id="main">
+      <p class="note">This is a note!</p>
+    </div>
+    <p>JavaScript Siblings example</p>
+    <ul id="menu">
+      <li>Home</li>
+      <li>Products</li>
+      <li class="current">Customer Support</li>
+      <li>Careers</li>
+      <li>Investors</li>
+      <li>News</li>
+      <li>About Us</li>
+    </ul>
+    <script>
+      let note = document.querySelector('.note');
+      console.log(note.parentNode);
+      console.log('------');
+      console.log('to get next sibling');
+      let current = document.querySelector('.current');
+      let nextSibling = current.nextElementSibling;
+      console.log(nextSibling);
+      current = document.querySelector('.current');
+      nextSibling = current.nextElementSibling;
+      console.log('------');
+      console.log('to get all next siblings');
+      while (nextSibling) {
+        console.log(nextSibling);
+        nextSibling = nextSibling.nextElementSibling;
+      }
+      console.log('------');
+      console.log('to get previous sibling');
+      let current = document.querySelector('.current');
+      let prevSibling = currentNode.previousElementSibling;
+      console.log('------');
+      console.log('to get all previous siblings');
+      let current = document.querySelector('.current');
+      let prevSibling = current.previousElementSibling;
+      while (prevSibling) {
+        console.log(prevSibling);
+        prevSibling = current.previousElementSibling;
+      }
+      console.log('------');
+      console.log('to get all siblings open ex6a.html');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript DOM</title>
+    <style type="text/css">
+      body {
+        font: arial, sans-serif;
+        font-size: 1em;
+        line-height: 1.6;
+      }
+
+      p::first-letter {
+        font-size: 1.5em;
+        font-weight: normal;
+      }
+      .message {
+        background-color: #fff3d4;
+        border: solid 1px #f6b73c;
+        padding: 20px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Plus - DOM</h1>
+    <h2>Styling</h2>
+    <p>setting/getting styles</p>
+    <br />
+    <p id="content">JavaScript Setting Style Demo!</p>
+    <p class="message" style="color: green">
+      This is a JS getComputedStyle() Demo!
+    </p>
+    <p id="main">JavaScript getComputedStyle() Demo for pseudo-elements</p>
+    <script>
+      let p = document.querySelector('#content');
+      p.style.color = 'red';
+      p.style.fontWeight = 'bold';
+      let message = document.querySelector('.message');
+      let style = getComputedStyle(message);
+
+      console.log('color:', style.color);
+      console.log('background color:', style.backgroundColor);
+      let p2 = document.getElementById('main');
+      let style2 = getComputedStyle(p2, '::first-letter');
+      console.log(style2.fontSize);
+    </script>
+  </body>
+</html>

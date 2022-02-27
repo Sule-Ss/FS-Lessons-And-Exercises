@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript DOM</title>
+  </head>
+  <body>
+    <h1>JavaScript Plus - DOM</h1>
+    <h2>Managing Attributes</h2>
+    <p>setting/getting attributes</p>
+    <br />
+    <button id="btnSend">Send</button>
+    <a href="https://www.clarusway.com" target="_blank" id="site">Clarusway </a>
+    <script>
+      let btnSend = document.querySelector('#btnSend');
+      if (btnSend) {
+        btnSend.setAttribute('name', 'send');
+        btnSend.setAttribute('disabled', '');
+      }
+      let link = document.querySelector('#site');
+      if (link) {
+        let target = link.getAttribute('target');
+        console.log(target);
+      }
+      if (link) {
+        let title = link.getAttribute('title');
+        console.log(title); // null
+      }
+      // hasAttribute
+      let btn = document.querySelector('#btnSend');
+      if (btn) {
+        let disabled = btn.hasAttribute('disabled');
+        console.log(disabled);
+      }
+      // remove attribute
+      if (link) {
+        link.removeAttribute('target');
+      }
+    </script>
+  </body>
+</html>

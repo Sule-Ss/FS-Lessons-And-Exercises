@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <head>
+        <title>JavaScript DOM</title>
+      </head>
+      <body>
+        <h1>JavaScript Plus - DOM</h1>
+        <p>createElement() example</p>
+    <script>
+        let div = document.createElement('div');
+        div.id = 'content';
+        div.innerHTML = '<p>CreateElement example</p>';
+        document.body.appendChild(div);
+        // create a new div and set its attributes
+        let div2= document.createElement('div');
+        div2.id = 'content2';
+        div2.className = 'note';
+        let h2 = document.createElement('h2');
+        h2.textContent = 'Add h2 element to the div2';
+        div2.appendChild(h2);
+        
+        // create a new text node and add it to the div
+        let text = document.createTextNode('CreateElement div2 example');
+        div2.appendChild(text);
+        // create a new heading and add it to the div
+
+// add div to the document
+        // add div to the document
+        document.body.appendChild(div2);
+    </script>
+  </body>
+</html>
