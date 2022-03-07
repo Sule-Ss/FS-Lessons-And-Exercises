@@ -189,16 +189,33 @@ const newPersonels= personels.map((p) =>{ // arrow func parantezi
 console.log(newPersonels);
 
 //* EXAMPLE4: List the person's names whose age is under 33.
+const ages =   personels.filter((personel)=> personel.age < 33);
+console.log(ages);
 
 //* EXAMPLE5: Store the names and ages of the developers as a new Object.
+const newArray = personels.map((p) =>{
+  return {
+      name : p.name,
+      age : p.age,
+  }
+})
+console.log(newArray);
 
 //* EXAMPLE6: calculate avg age of  people.
+console.log(personels.map((p) => {return p.age}).reduce((x,y)=> x+y,0)/personels.length);
 
 //*EXAMPLE7: Increase the salaries of developers by 20% and
 //* calculate sum of increased salary of devs.
+const increade = personels.map((i) => i.salary + (i.salary / 5)).reduce((x,y)=> x+y,0)
+console.log(increade);
 
 //*EXAMPLE8: Increase the salaries of developers by 20% and
 //* update the personels object.
+const increade2 = personels.map((i) => i.salary =  i.salary + (i.salary / 5))
+console.log(increade2);
+console.log(personels);
 
 //*EXAMPLE9: Delete personel whose id is equals to 4;
 //* Exmple: deleteById(4)
+personels =personels.filter((d)=> {return d.id !== 4})
+console.log(personels);
