@@ -1,6 +1,6 @@
-# JavaScript Session-14 Class Notes :rocket:
+# JavaScript Session-16 Class Notes :rocket:
 
-## Session-14 Async Programming - 1
+## Session-16 Async Programming - 1
 
 ### Synchronous vs Asynchronous
 
@@ -434,11 +434,14 @@ promise.then(onFulfilled);
 
 ### Async/await
 
-We use the `async` keyword with a function to represent that the function is an asynchronous function. The async function returns a `promise`.
+We use the `async` keyword with a function to represent that the function is an asynchronous function. The async function returns a `promise`. We prepend `async` keyword to function declaration or function statement, such as arrow function's parentheses:
 
 ```js
 async function functionName(parameter1, parameter2, ...paramaterN) {
     // statements
+}
+const f1 = async () => {
+  // some code
 }
 
 functionName() instanceof Promise // true
@@ -449,7 +452,161 @@ async function func1() {
 }
 ```
 
+We can only use `await`keyword inside an async function. `await` keyword is prepended to any statement in which program execution should wait for the result before continuing. We cannot use `await` keyword in non async functions, or main execution block, with the exception of modules.
 
+#### Error Handling in async functions
+
+As stated above, async functions are instance of Promise object. Therefore function may respond with reject status. We can either `throw` error or return `Promise.reject()`. We can handle errors using `try... catch` blocks.
+
+```js
+async function getUser(userId) {
+	await Promise.reject(new Error('Invalid User Id'));
+  // or
+  throw new Error('Invalid User Id');
+}
+
+// handling errors with try... catch
+
+async function showServiceCost() {
+    try {
+      let user = await getUser(100);
+      let services = await getServices(user);
+      let cost = await getServiceCost(services);
+      console.log(`The service cost is ${cost}`);
+    } catch(error) {
+      console.log(error);
+      // we can also throw the error
+      throw error;
+      // or like below
+      throw new Error('some specific error message');
+    }
+}
+```
+
+
+
+### Fetch api
+
+The Fetch API is a modern interface that allows you to make HTTP requests to servers from web browsers.
+
+If you have worked with `XMLHttpRequest` (`XHR`) object, the Fetch API can perform all the tasks as the `XHR` object does.
+
+In addition, the Fetch API is much simpler and cleaner. It uses the `Promise` to deliver more flexible features to make requests to servers from the web browsers.
+
+The `fetch()` method is available in the global scope that instructs the web browsers to send a request to a URL.
+
+The `fetch()` requires only one parameter which is the URL of the resource that you want to fetch:
+
+```js
+let response = fetch(url);
+```
+
+The `fetch()` method returns a `Promise` so you can use the `then()` and `catch()` methods to handle it.
+
+When the request completes, the resource is available. At this time, the promise will resolve into a `Response` object.
+
+The `Response` object is the API wrapper for the fetched resource. The `Response` object has a number of useful properties and methods to inspect the response.
+
+#### Reading the Response
+
+If the contents of the response are in the raw text format, you can use the `text()` method. The `text()` method returns a `Promise` that resolves with the complete contents of the fetched resource:
+
+```js
+fetch('/readme.txt')
+    .then(response => response.text())
+    .then(data => console.log(data));
+```
+
+In practice, you often use the [`async`/`await`](https://www.javascripttutorial.net/es-next/javascript-async-await/) with the `fetch()` method like this:
+
+```js
+async function fetchText() {
+    let response = await fetch('/readme.txt');
+    let data = await response.text();
+    console.log(data);
+}
+```
+
+Besides the `text()` method, the `Response` object has other methods such as `json()`, `blob()`, `formData()` and `arrayBuffer()` to handle the respective type of data.
+
+#### JavaScript Fetch API example
+
+```js
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+```
+
+**Result:**
+
+```json
+{
+	"userId": 1,
+	"id": 1,
+	"title": "delectus aut autem",
+	"completed": false
+}
+```
+
+> **fetch response has some built-in methods:**
+>
+> `json()`: response body text as [`JSON`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) ,
+>
+> `text()`: text representation of the response body ,
+>
+> `formData()`:   [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) representation of the response body ,
+>
+> `arrayBuffer()`:   [`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) representation of the response body,
+>
+> `blob()`:  [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob) representation of the response body.
+
+#### Handling the status codes of the Response
+
+The `Response` object provides the status code and status text via the `status` and `statusText` properties. When a request is successful, the status code is `200` and status text is `OK`:
+
+```js
+async function fetchText() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/users/8');
+
+    console.log(response.status); // 200
+    console.log(response.statusText); // OK
+
+    if (response.status === 200) {
+        let data = await response.text();
+        // handle data
+    }
+}
+fetchText();
+```
+
+Output:
+
+```
+200
+OK
+```
+
+If the requested resource doesn’t exist, the response code is `404`:
+
+```js
+let response = await fetch('/non-existence.txt');
+
+console.log(response.status); // 400
+console.log(response.statusText); // Not Found
+```
+
+Output:
+
+```
+400
+Not Found
+```
+
+If the requested URL throws a server error, the response code will be `500`.
+
+If the requested URL is redirected to the new one with the response `300-309`, the `status` of the `Response` object is set to `200`. In addition the `redirected` property is set to `true`.
+
+The `fetch()` returns a promise that rejects when a real failure occurs such as a web browser timeout, a loss of network connection, and a `CORS` violation.
 
 ## References
 
@@ -466,8 +623,6 @@ async function func1() {
 - [What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://www.youtube.com/watch?v=8aGhZQkoFbQ) ~27 min
 
 9. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-10. 
-
-```
-
-```
+10. https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+11. https://www.javascripttutorial.net/javascript-fetch-api/
+12. https://javascript.info/async-await#async-functions
