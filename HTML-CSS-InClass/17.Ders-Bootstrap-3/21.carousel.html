@@ -14,20 +14,24 @@
 </head>
 <body>
     <h1>Hello, Clarusway!</h1>
-
+    <!-- 
+        carousel >> kaydırmalı menü gibi
+        prev-next >> carousel ın yan  taraflarındaki oklar
+     -->
     <div class="carousel slide" data-bs-ride="carousel" id="slider">
-
+        <!-- indicator >> carousel ların alt kısmındaki sayfa miklarını belirten kuçük çizgiler
+             data-bs-slide-to >> eleman sıralaması yapar.-->
         <div class="carousel-indicators" style="background-color:brown" >
             <button class="active" data-bs-target="#slider" data-bs-slide-to="0" ></button>
             <button class="active" data-bs-target="#slider" data-bs-slide-to="1" ></button>
             <button class="active" data-bs-target="#slider" data-bs-slide-to="2" ></button>
         </div>
 
-
+        <!-- carousel-inner >> iç kısmını oluşturur -->
         <div class="carousel-inner">
 
-            <div class="carousel-item active">
-                <img src="./img/slider-1.jpeg" alt="">
+            <div class="carousel-item active"> <!-- bir tanesi active olmak zorunda -->
+                <img src="./img/slider-1.jpeg" alt=""><!-- data-bs-interval ="10000" 1sn de geçiş yapar süre değiştirilebilir.-->
             </div>
             <div class="carousel-item">
                 <img src="./img/slider-2.jpeg" alt="">
@@ -37,14 +41,18 @@
             </div>
 
         </div>
-
+        <!--
+            carousel-control-prev-icon >> carousel in controlünün soltuşunun iconunu ekler
+            data-bs-target >> yukarıdaki carousel in id si ile bağladık
+            data-bs-slide >>  geçiş yapması için konut verir.
+        -->
         <button class="carousel-control-prev" style="background-color:brown" 
             data-bs-target="#slider"
             data-bs-slide="prev" >
             <span class="carousel-control-prev-icon"></span>
         </button>
 
-          
+          <!-- sağ buton için prevler next ile değiştirilir. -->
         <button class="carousel-control-next" style="background-color:brown" 
             data-bs-target="#slider"
             data-bs-slide="next" >

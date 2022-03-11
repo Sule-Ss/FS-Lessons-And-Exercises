@@ -35,16 +35,22 @@
 
 
     <div class="row mt-4">
+        <!-- col-3 col-4 col-6 vs ile  -->
         <div class="col-3 bg-info">Column-1</div>
         <div class="col-5 bg-warning ">column-1</div>
     </div>
     <br>
 
+    <!-- .container responsive olmasını sağlar. -->
     <div class="container">
         <div class="row">
-
+            <!-- Mediaquery leri ayarlamak için : 
+                col-sm-6 >> 12 sütunumuz var yarı yarıya böldük 2 ye düşecek
+                col-md-4 >> 12 sütunumuzu 3 e bölüyoruz orta boy
+                col-lg-3 >> 12 sütunumuzu 4 e böldük   biraz daha büyük hali  -->
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
+                    <!-- card-img-top >>> top üstte durduğu için olabilir bottom vs diye alternatifi yok zaten. -->
                    <img src="./img/1.jpeg" alt="" class="card-img-top">
 
                    <div class="card-body">
