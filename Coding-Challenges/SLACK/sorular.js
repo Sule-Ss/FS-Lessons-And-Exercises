@@ -1,5 +1,4 @@
-
-// 1) 
+//? 1)
 /* 
 First, print each vowel in  on a new line. The English vowels are a, e, i, o, and u, and each vowel must be printed in the same order as it appeared in .
 Second, print each consonant (i.e., non-vowel) in  on a new line in the same order as it appeared in .
@@ -38,9 +37,8 @@ partLast.forEach(function (letter) {
 });
  */
 
-
-
-// 2) Write a Python/JavaScript code that counts how many vowels and constants a string has that a user entered.
+//? 2)
+// Write a Python/JavaScript code that counts how many vowels and constants a string has that a user entered.
 /* 
 let text = prompt("Enter a text : ").trim();
 let part1 = text.match(/[aeiou]/gi);
@@ -79,9 +77,8 @@ console.log(`Vovels: ${vovelsInText}
 Constants: ${constantsInText}`)
 */
 
-
-
-// 3) Try to find out if a number you get from the user is perfect. A number is called a "perfect number" 
+//? 3)
+// Try to find out if a number you get from the user is perfect. A number is called a "perfect number"
 //    if the sum of its divisors is equal to itself. For example, 6 is a perfect number. (1 + 2 + 3 = 6)
 /* 
 function perfectNumbers() {
@@ -101,10 +98,9 @@ function perfectNumbers() {
 }
 perfectNumbers(); */
 
-
-// 4)
-// Try to find out if a number you get from the user is perfect. 
-// A number is called a "perfect number" if the sum of its divisors is equal to itself. 
+//? 4)
+// Try to find out if a number you get from the user is perfect.
+// A number is called a "perfect number" if the sum of its divisors is equal to itself.
 // For example, 6 is a perfect number. (1 + 2 + 3 = 6)
 /* 
 function perfectNumbers() {
@@ -124,7 +120,7 @@ function perfectNumbers() {
 }
 perfectNumbers(); */
 
-// 5)
+//? 5)
 
 /* 
 Ask user to enter a word, a separator and number of repetitions. Write a Python/JS code displaying the word with repetition times and having each word separated with separator character.
@@ -169,7 +165,7 @@ function myFunction(){
 }
 */
 
-// 6)
+//? 6)
 
 /* 
 Write a Python/JS code to sort the list/array below without using .sort() method of list/array.
@@ -202,7 +198,7 @@ for (let i = 0; i < lengthOfElements; i++) {
 console.log(new_list);
 */
 
-// 7)
+//? 7)
 
 /* 
 Write a Python/JS code to find greatest common divisor (gcd) of 2 numbers.  
@@ -282,7 +278,7 @@ const gcd = (x, y) => {
 console.log(gcd(90, 60));
 */
 
-// 8)
+//? 8)
 
 /* 
 Write a Python/JS code to find the numbers that are grater than 150 at below text, and sort these numbers.
@@ -316,7 +312,7 @@ text = "Maradona spent 5 years at Argentinos Juniors, from 1976 to 1981 , scorin
 console.log(text.split(" ").filter(word => !isNaN(word) && word > 150).sort((a,b) => a - b))
 */
 
-// 8)
+//? 9)
 
 /* 
 This is an interview question asked by Google.
@@ -349,7 +345,7 @@ for (let i = 0; i < liste.length; i++) {
 }
 */
 
-// 9)
+//? 10)
 
 /* 
 This is an interview question asked by Uber.
@@ -399,4 +395,301 @@ function productNumbers(array){
 
         array = [1, 2, 3, 4, 5]
         console.log(productNumbers(array));
+*/
+
+//? 11)
+
+/* 
+This is an interview question asked by Twitter.
+Implement an autocomplete system. That is, given a query string s and a set of all possible query strings, return all strings in the set that have s as a prefix.
+For example, given the query string de and the set of strings [dog, deer, deal], return [deer, deal].
+*/
+
+/* let a = "de";
+let array = ["dog", "deer", "deal"];
+function matchFunc(array) {
+  let i;
+  let array2 = [];
+  for (i of array) {
+    if (i.match(a)) {
+      array2.push(i);
+    }
+  }
+  console.log(array2);
+}
+matchFunc(array); //['deer', 'deal']
+ */
+
+//? 12)
+
+/* 
+This is an interview question asked by Amazon.
+There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
+For example, if N is 4, then there are 5 unique ways:  
+1, 1, 1, 1  
+2, 1, 1  
+1, 2, 1  
+1, 1, 2  
+2, 2
+*/
+
+/* 
+function climbStairs(n) {
+    if (n <=1) return 1;
+    return climbStairs(n - 1) + climbStairs(n - 2);
+}
+
+console.log(climbStairs(0));    // 1
+console.log(climbStairs(1));    // 1
+console.log(climbStairs(2));    // 2
+console.log(climbStairs(3));    // 3
+console.log(climbStairs(4));    // 5
+console.log(climbStairs(5));    // 8
+console.log(climbStairs(6));    // 13
+
+
+Python
+
+def climb_stairs(n):
+    if n <= 1:
+        return 1
+    return climb_stairs(n - 1) + climb_stairs(n - 2)
+
+print(climb_stairs(0))
+print(climb_stairs(1))
+print(climb_stairs(2))
+print(climb_stairs(3))
+print(climb_stairs(4))
+print(climb_stairs(5))
+print(climb_stairs(6))
+*/
+
+
+/* 
+function fact(n){
+    if (n === 1 || n===0) return 1;
+    return n * fact(n - 1) 
+}
+
+function staircase(num){
+    let numArray = Array(num).fill(1);
+    let result = 1;
+
+    while(numArray.includes(1)){
+        numArray.pop()
+        for(let i=0; i<numArray.length; i++){
+            if(numArray[i] === 1){
+                numArray[i] = 2;
+                break;
+            }
+        }
+        console.log(numArray)
+        let ones = numArray.filter(x => x===1).length
+        let twos = numArray.filter(x => x===2).length
+
+        ones + 2 * twos === num && (result += fact(numArray.length) / (fact(ones) * fact(twos)))
+    }
+    return result;
+
+}
+
+console.log(staircase(6))
+*/
+
+//? 13)
+
+/* 
+This is an interview question asked by Amazon.
+Given an integer k and a string s, find the length of the longest substring that contains at most k distinct characters.
+For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
+*/
+
+/* 
+function longestSubstring(s, k) {
+    let _s = new Map();
+    for (const i in s) {
+        for (const j in s) {
+            if (new Set(s.slice(i, Number(j) + 1)).size == k) {
+                _s.set(s.slice(i, Number(j) + 1).length, s.slice(i, Number(j) + 1))
+            }
+        }
+    }
+    return _s.get(Math.max(..._s.keys()))
+}
+console.log(longestSubstring("abcba",2))
+PYTHON
+def longestSubstring(s,k):
+  _s=[(len(s[i:j+1]),s[i:j+1]) for i in range(len(s)) for j in range(len(s)) if len(set(s[i:j+1]))==k]
+  return max(_s)[1]
+longestSubstring("abcba",2)
+*/
+
+/* 
+let k = 3;
+let s = "abdcbabcdbba";
+let [longest, temp] = ["", ""]
+
+for(let letter of s){
+    if(new Set(temp + letter).size > k){
+        while(new Set(temp).size >= k){
+            temp = temp.slice(1);
+        }
+    }
+    temp += letter;
+    (temp.length > longest.length) && (longest = temp)
+}
+
+console.log(longest)
+*/
+
+//? 14)
+
+/* 
+This is an interview question
+Longest Substring Without Repeating Characters
+Level: Medium
+Given a string s, find the length of the longest substring without repeating characters.
+Example 1:
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 2:
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+*/
+
+/* 
+let text = "abcabcbb";
+let [longest, temp] = ["", ""]
+
+for(let letter of text){
+   while(temp.includes(letter)){
+      temp = temp.slice(1);
+   }
+   temp += letter;
+   (temp.length > longest.length) && (longest = temp)
+}
+
+console.log(longest)
+*/
+
+/* 
+function longestPiece(s){
+    let longest = s.slice(0,1);
+    for (let i = 0; i <= s.length; i++) {
+        for (let j = s.length; j >= i; j--) {
+            longest = (new Set(s.slice(i,j)).size == s.slice(i,j).length 
+                    && s.slice(i,j).length > longest.length) 
+                    ? s.slice(i,j) : longest;
+        }
+    }
+    console.log(`The answer is "${longest}", with the length of ${longest.length}.`);
+}
+
+longestPiece("abcabcbb");   // The answer is "abc", with the length of 3.
+longestPiece("bbbbb");      // The answer is "b", with the length of 1.
+longestPiece("pwwkew");     // The answer is "wke", with the length of 3.
+*/
+
+/* 
+function longestSub(str) {
+    let words = str.split('')
+    words = [...new Set(words)];
+    let newStr = words.join('')
+    return newStr;
+}
+longestSub('aaaav')
+*/
+
+//? 15)
+/* 
+This is an interview question asked by Google.
+Given an array of integers and a number k, where 1 <= k <= length of the array, compute the maximum values of each subarray of length k.
+For example, given array = [10, 5, 2, 7, 8, 7] and k = 3, we should get: [10, 7, 8, 8], since:
+10 = max(10, 5, 2) 
+7 = max(5, 2, 7) 
+8 = max(2, 7, 8)
+8 = max(7, 8, 7)
+*/
+
+/* 
+let arr = [10, 5, 2, 7, 8, 7];
+        let k = 3;
+        function maxSubArr(arr, k){
+            let result = [];
+            for (let i = 0; i <= arr.length; i++) {
+                if (k + i <= arr.length) {
+                    let subarr = arr.slice(i, i + k);
+                    let maxNum = Math.max(...subarr);
+                    result.push(maxNum);
+                }
+            }
+        return result;
+        }
+        console.log(maxSubArr(arr,k));
+*/
+
+/* 
+function maxOfSubArrays(array,k){
+    for (let i = 0; i < array.length-k+1; i++) {
+        console.log(Math.max(...array.slice(i, k + i)), `= max(${array.slice(i, k + i)})`); 
+    }
+}
+
+maxOfSubArrays([10, 5, 2, 7, 8, 7], 3);
+*/
+
+//? 16)
+
+/* 
+This is an interview question asked by Facebook.
+Given a string of round, curly, and square open and closing brackets, return whether the brackets are balanced (well-formed).
+For example, given the string "([])", you should return true.
+Given the string "([)]" or "((()", you should return false.
+*/
+
+/* 
+let str1 = "(([[]))";
+let str2 = "([())]";
+let str3 = "([([])])";
+function check(str) {
+  if (str.length % 2 == 0) {
+    let list = [];
+    for (let i = 0; i < str.length / 2; i++) {
+      list.push(str[i] + str.at(-i - 1));
+    }
+    for (let j of list) {
+      if (j == "()" || j == "[]") {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  } else {
+    return false;
+  }
+}
+console.log(check(str3));
+*/
+
+/* 
+function wellFormedString(str){
+      let s = str;
+      while (s.includes("()") || s.includes("[]") || s.includes("{}")) {
+            let temp = s.replace("()","").replace("[]","").replace("{}","");
+            s = temp;
+      }
+      return s == "";
+}
+
+console.log(wellFormedString("([{({})}]({}))")) //? Output: True
+console.log(wellFormedString("((()"))           //? Output: False
+console.log(wellFormedString("([)]"))           //? Output: False
+console.log(wellFormedString("([])"))           //? Output: True
 */
