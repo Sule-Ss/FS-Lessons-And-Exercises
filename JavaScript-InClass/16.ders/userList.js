@@ -9,7 +9,7 @@ const getApiUserList = async (pageNo) => {
     //     url: "https://reqres.in/api/users?page=1",
     //     method: "get"
     // });
-
+ 
     try {
         const responseData = await axios.get("https://reqres.in/api/users?page=1");
         const { data } = responseData.data;
