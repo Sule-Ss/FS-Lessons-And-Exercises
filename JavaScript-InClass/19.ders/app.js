@@ -1,6 +1,6 @@
 // const data = fetch('https://restcountries.com/v3.1/name/Turkey');
 // console.log(data);
-
+ 
 // fetch('https://restcountries.com/v3.1/name/Turkey')
 //   .then((response) => {
 //     console.log(response);
