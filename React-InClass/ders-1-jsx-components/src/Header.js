@@ -20,22 +20,20 @@
 //* className is used for class definitions
 //* 3rd parties libraries like Material UI, Styled Component, Sass, Bootstrap etc.
 //* can also be used for styling
-import React from "react";
 
 const pStyle = {
-    fontFamily:"Tahoma",
-    color: "yellow",
-    backgroundColor:"brown"
+  fontFamily: "Tahoma",
+  color: "yellow",
 };
-
 
 function Header() {
   return (
-    <div>
-      <h3 style={{backgroundColor: "purple", color:"white", textAlign:"center"}}>I am Header!</h3>
-      <p style={pStyle}>Reinvetn Yourself</p>
+    <div
+      style={{ backgroundColor: "purple", color: "white", textAlign: "center" }}
+    >
+      <h1>CLARUSWAY</h1>
+      <p style={pStyle}>Reinvent Yourself</p>
     </div>
   );
 }
-
 export default Header;

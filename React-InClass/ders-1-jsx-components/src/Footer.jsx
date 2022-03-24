@@ -6,11 +6,12 @@ const pStyle = {
   backgroundColor: "black",
   color: "white",
 };
+
 class Footer extends Component {
   render() {
     return (
       <div>
-        <p style={pStyle}>I am Footer! Copyright {new Date().getFullYear()}</p>
+        <p style={pStyle}>Copyright {new Date().getFullYear()}</p>
       </div>
     );
   }
