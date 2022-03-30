@@ -464,7 +464,6 @@ print(climb_stairs(5))
 print(climb_stairs(6))
 */
 
-
 /* 
 function fact(n){
     if (n === 1 || n===0) return 1;
@@ -693,3 +692,151 @@ console.log(wellFormedString("((()"))           //? Output: False
 console.log(wellFormedString("([)]"))           //? Output: False
 console.log(wellFormedString("([])"))           //? Output: True
 */
+
+//? 17)
+
+/* 
+This is an interview question asked by Facebook.
+Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
+You can assume that the messages are decodable. For example, '001' is not allowed.
+*/
+/* 
+console.log(factorial(5));
+
+function countEncoding(s) {
+  if (s.startsWith("0")) return 0;
+  if (s.length <= 1) return 1;
+
+  let total = 0;
+
+  if (+s.slice(0, 2) <= 26) {
+    total += countEncoding(s.slice(2));
+    total += countEncoding(s.slice(1));
+    return total;
+  }
+}
+
+console.log(countEncoding("11211")); */
+/* 
+function countEncoding2(s) {
+  if (s.startsWith("0")) return 0;
+  const lst = Array(s.length + 1).fill(0, 2);
+  [lst[0], lst[1]] = [1, 1];
+  for (let i = 2; i < s.length + 1; i++) {
+    lst[i] = 0;
+    if (+s[i - 1] > 0) lst[i] = lst[i - 1];
+    const twoDigit = +s.slice(i - 2, i);
+    if (twoDigit <= 26 && twoDigit >= 10) lst[i] += lst[i - 2];
+  }
+
+  return lst[lst.length - 1];
+}
+
+console.log(countEncoding2("111")); */
+
+//? 18)
+
+/* 
+This is an interview question asked by Airbnb.
+Given a list of integers, write a function that returns the largest sum of non-adjacent numbers. Numbers can be 0 or negative.
+For example,
+[2, 4, 6, 2, 5] should return 13, since we pick 2, 6, and 5.
+[5, 1, 1, 5] should return 10, since we pick 5 and 5.
+*/
+/* 
+const largestNonAdjacent = (arr) => {
+  let n = arr.length;
+  let maxNum = 0;
+  if (n == 1) return arr[0];
+  if (n == 2) return Math.max(arr[n - 1], arr[n - 2]);
+  else {
+    maxNum = Math.max(
+      largestNonAdjacent(arr.slice(0, n - 1)),
+      arr[n - 1] + largestNonAdjacent(arr.slice(0, n - 2))
+    );
+  }
+  return maxNum;
+};
+
+console.log(largestNonAdjacent([2, 4, 6, 2, 5])); // 2 + 6 + 5 = 13
+console.log(largestNonAdjacent([5, 1, 1, 5])); // 5 + 5     = 10
+console.log(largestNonAdjacent([2, 4, 3, 1, 2, 8, 5])); // 4 + 1 + 8 = 13
+console.log(largestNonAdjacent([1, 0, 3, 9, 2])); // 1 + 9     = 10
+
+ */
+
+/* function result(arr) {
+  let newArr = arr;
+  let sumarr = [];
+  let a = [];
+
+  for (let i = 0; i < newArr.length; i = i + 1) {
+    sumarr.push(sum(arr));
+    sumarr.push(sum3(arr));
+    sumarr.push(Negsum(arr));
+    sumarr.push(Negsum3(arr));
+    arr.shift();
+  }
+  for (const i of sumarr) {
+    a.push(i[0]);
+  }
+  return Math.max(...a);
+}
+console.log(result([-2, 0, 3, 6, 7, 9]));
+
+function sum(arr) {
+  let first = 0;
+  let newArr = [];
+  for (let i = 0; i < arr.length; i = i + 2) {
+    first += arr[i];
+  }
+
+  newArr.push(first);
+
+  return newArr;
+}
+function sum3(arr) {
+  let first = 0;
+  let newArr = [];
+  for (let i = 0; i < arr.length; i = i + 3) {
+    first += arr[i];
+  }
+
+  newArr.push(first);
+
+  return newArr;
+}
+function Negsum(arr) {
+  let first = 0;
+  let newArr = [];
+  for (let i = arr.length - 1; i > 0; i = i - 2) {
+    first += arr[i];
+  }
+
+  newArr.push(first);
+
+  return newArr;
+}
+
+function Negsum3(arr) {
+  let first = 0;
+  let newArr = [];
+  for (let i = arr.length - 1; i > 0; i = i - 3) {
+    first += arr[i];
+  }
+
+  newArr.push(first);
+
+  return newArr;
+}
+ */
+
+/* const sumFunc = (arr) => {
+  if (arr.length === 1 || arr.length === 2) return Math.max(...arr);
+
+  return Math.max(arr[0] + sumFunc(arr.slice(2)), sumFunc(arr.slice(1)));
+};
+
+console.log(sumFunc([3, 5, 7, 9, 8, 3]));
+ */
