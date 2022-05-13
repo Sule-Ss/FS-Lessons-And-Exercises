@@ -232,3 +232,17 @@ emp1.display_langs()
 - super() ilk class a işaret eder. Eğer ikinci bir classtan da miras almak istiyorsak ya ismen çağırmalyız yada , içerisinde yapılan işlemleri tekrar tanımlamak lazım.  Yukarıdaki Langs classını Employee içinde çağırırken kullandık.
 
 - `.mro()` türetülen class ağacını gösterir. `print(Employee.mro())` gibi.
+
+
+#### inner class : 
+- Sadece python a has class yapısı. Class içide class tanımlanabilir. Sabit metodlarla işlem yaparak default değerleri değiştiriyoruz. Model ve form tanımlarında çok kullanılacak.
+
+from django.db import models
+
+<pre>
+class Article(models.Model):
+    name = models.CharField(max_length=30)
+
+    class Meta:
+        ordering = ['name']
+</pre>
