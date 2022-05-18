@@ -1,0 +1,14 @@
+
+body {
+    text-align: center;
+    background-color: aqua;
+}
+
+body>* {
+    background-color: whitesmoke;
+}
+
+img{
+    width: 5rem;
+    height: 5rem;
+}

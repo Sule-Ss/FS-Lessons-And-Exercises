@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+
+
+<body>
+    <h1>Special Page</h1>
+
+    <h2>{{request.user}}</h2>
+
+    <h3>The best bootcamp {{title|title}}</h3>
+
+    <h4>The Django is {{dict1.django | title}}</h4>
+    <h4>{{my_list.0}}</h4>
+    {% for i in my_list %}
+    <li>{{i}}</li>
+    {% endfor %}
+
+    <img src="{% static 'app/bykus.png' %}" alt="">
+
+</body>
+
+</html>

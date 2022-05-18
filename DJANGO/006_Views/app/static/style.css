@@ -1,0 +1,8 @@
+body {
+    text-align: center;
+    background-color: aqua;
+}
+
+body>* {
+    background-color: rgb(255, 206, 213);
+}
