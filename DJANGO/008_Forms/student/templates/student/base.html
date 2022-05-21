@@ -16,6 +16,12 @@
 <body>
   <div style="margin-top: 100px; margin-bottom: 100px" class="container">
 
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
     {% block container %}
     {% endblock container %}
 
