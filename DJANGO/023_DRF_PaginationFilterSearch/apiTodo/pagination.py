@@ -1,5 +1,5 @@
 # from rest_framework import pagination
-from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
+from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination, CursorPagination
 
 
 class SmallMyPageNumberPagination(PageNumberPagination):
@@ -14,5 +14,12 @@ class LargeMyPageNumberPagination(PageNumberPagination):
 
 class MyLimitOffsetPagination(LimitOffsetPagination):
     default_limit = 1
-    limit_query_param = 'sayfadaki_eleman_sayisi' # defaults to 'limit'
-    offset_query_param = "baslangic" # defaults to 'offset'
+    # limit_query_param = 'sayfadaki_eleman_sayisi' # defaults to 'limit'
+    # offset_query_param = "baslangic" # defaults to 'offset'
+
+
+class MyCursorPagination(CursorPagination):
+    ordering = "createdDate"
+    page_size = 2
+
+
