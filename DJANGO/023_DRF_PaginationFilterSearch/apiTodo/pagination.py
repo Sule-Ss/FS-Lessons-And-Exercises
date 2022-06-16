@@ -14,3 +14,5 @@ class LargeMyPageNumberPagination(PageNumberPagination):
 
 class MyLimitOffsetPagination(LimitOffsetPagination):
     default_limit = 1
+    limit_query_param = 'sayfadaki_eleman_sayisi' # defaults to 'limit'
+    offset_query_param = "baslangic" # defaults to 'offset'
