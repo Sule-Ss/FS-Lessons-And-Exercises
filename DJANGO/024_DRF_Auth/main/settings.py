@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # third party apps
     "rest_framework",
     'django_filters',
+     'rest_framework.authtoken',
     # my apps
     "apiTodo",
 ]
@@ -148,4 +149,7 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.CursorPagination',
     # 'DEFAULT_PAGINATION_CLASS': 'apiTodo.pagination.MyCursorPagination',
     # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+        'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
 }
