@@ -12,6 +12,8 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 # permissions import :
 from rest_framework.permissions import (IsAuthenticated, AllowAny, IsAuthenticatedOrReadOnly, IsAdminUser)
 
+from .permissions import IsAdminOrReadOnly
+
 
 # Create your views here.
 def home(request):
@@ -22,7 +24,7 @@ def home(request):
 #! Function Based Views
 
 class TodoMVS(viewsets.ModelViewSet):
-    permission_classes=[IsAuthenticatedOrReadOnly]
+    permission_classes=(IsAdminOrReadOnly,)
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
