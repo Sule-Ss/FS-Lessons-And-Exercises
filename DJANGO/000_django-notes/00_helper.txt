@@ -1,0 +1,112 @@
+1 --> python -m venv env
+2 --> source env/Scripts/activate
+3 --> pip install django
+4 --> django-admin startproject main .
+5 --> python manage.py startapp appadi
+6 --> pip install -r requirements.txt
+7 --> pip freeze > requirements.txt
+8 --> python manage.py runserver 
+9 --> INSTALLED_APPS = [..., 'app'] yada : 'appadi.apps.AppadiConfig',
+10 --> app içindeki urls:
+	from django.urls import path
+	from. import views
+
+	urlpatterns=[path("", views.home)]
+
+11--> python manage.py migrate >>> tabloyu oluşturur
+12--> python manage.py makemigrations >> dbi hazırlar
+13 - python manage.py createsuperuser
+14 --> python manage.py shell
+15 --> pip install python-decouple
+from decouple import config
+SECRET_KEY = config("SECRET_KEY")
+
+16 --> static için :
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
+17 --> templates için : 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True,
+        ...
+    },
+]
+
+18 --> login için views içinde:
+from django.contrib.auth import authenticate, login, logout
+
+19 --> pip install social-auth-app-django --> auto kayıt işlemlerinde google vs kullanmak için
+
+
+--->! django corse
+
+----> f1 + interpretteier 
+
+---> python manage.py show_urls -> bütün endpointleri gösterir.
+
+
+
+--------------------------Rest FrameWork-------------------------------------------
+
+
+
+
+pip install djangorestframework
+
+pip install django-extensions
+
+INSTALLED_APPS = (
+    ...
+    'rest_framework',
+    'django_extensions',
+    ...
+)
+
+pip install ipython --> shell_plus için
+python manage.py shell_plus
+
+from rest_framework.renderers import JSONRenderer
+data = JSONRenderer().render(serializer.data) --> veriyi json datasına çevirir.
+
+from rest_framework.parsers import JSONParser
+stream = io.BytesIO(data)
+stream
+
+data = JSONParser().parse(stream)
+data --> python un anlayabileceği formatta gelir.
+
+pip install requests --> dışarıdan bir apiye ulaşım için
+
+
+---------------------------------------------------------------------------------------------
+
+
+  -------CRUD-----
+1 --> read --> CLASSISMI.objects.all() 
+1 --> create --> Course.objects.create(ATTR='', ATTR='') 
+1 --> update --> CLASSISMI.objects.get(id=1).save() 
+1 --> delete --> CLASSISMI.objects.get(id=1).delete() 
+
+1 --> 	CLASSISMI.objects.order_by('name') --> sıralar
+1 --> 	CLASSISMI.objects.order_by('-name') --> tersten sıralar.
+1 --> 	CLASSISMI.objects.filter(available=True)
+
+
+
+	MVT açılımı :
+
+	Model : Veri tabanıyla olan ilşki/database tabloları
+	View   : Mantıksal işlevler
+	Template :  Görünüme yönelik işlevler
+	{% tag %} 
+	{{ variable }} 
+	{{ variable|filter }} 
+
+
+
